@@ -1,0 +1,362 @@
+/* 
+    로고, 이미지
+    http://www.spritecow.com/
+*/
+.sprite_insta_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -53px -235px;
+    width: 22px;
+    height: 22px;
+}
+
+.sprite_write_logo {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -94px -72px;
+    width: 103px;
+    height: 29px;
+}
+
+.sprite_compass_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -130px -286px;
+    width: 23px;
+    height: 23px;
+}
+
+.sprite_user_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -272px -182px;
+    width: 22px;
+    height: 24px;
+}
+
+.sprite_heart_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -52px -261px;
+    width: 24px;
+    height: 22px;
+}
+
+.sprite_small_search_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -337px -246px;
+    width: 10px;
+    height: 10px;
+}
+
+.sprite_more_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -301px -218px;
+    width: 15px;
+    height: 3px;
+}
+
+.sprite_bubble_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -239px -202px;
+    width: 24px;
+    height: 24px;
+}
+
+.sprite_share_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -324px -52px;
+    width: 21px;
+    height: 24px;
+}
+
+.sprite_bookmark_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -237px -286px;
+    width: 19px;
+    height: 24px;
+}
+.sprite_bookmark_outline.on {
+    background: url('../imgs/background01.png') no-repeat -159px -286px;
+    width: 19px;
+    height: 24px;
+}
+
+.sprite_small_heart_icon_outline {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -323px -274px;
+    width: 12px;
+    height: 11px;
+}
+
+.sprite_camera_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -271px -104px;
+    width: 24px;
+    height: 22px;
+}
+
+.sprite_insta_big_logo {
+    display: inline-block;
+    background: url('../imgs/background02.png') no-repeat -98px -150px;
+    width: 175px;
+    height: 51px;
+}
+
+.sprite_plus_icon {
+    display: inline-block;
+    background: url('../imgs/background01.png') no-repeat -187px -202px;
+    width: 23px;
+    height: 23px;
+}
+
+/* 
+    상단바
+    로고, 검색창, 아이콘
+*/
+body {
+    background: #fafafa;
+    font-family: "나눔고딕";
+}
+
+#header {                       /*# : id, 단일 사용*/
+    width: 100%;
+    position: absolute;         /*최상단 위치*/
+    z-index: 999;
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#header .inner {                /*. : class, 다중 사용*/
+    width: 975px;
+    height: 77px;
+    margin: 0 auto;             /*가운데 정렬*/
+    display: flex;              /*가로 배치*/
+    justify-content: space-between; /*가로 자동 정렬*/
+    align-items: center;        /*세로 정렬*/
+}
+
+#header .inner .logo > a {
+    color: transparent;         /*배경색 투명*/
+}
+
+#header .inner .logo div {
+    vertical-align: middle;     /*로고 : 동일한 선상 위치*/
+}
+
+#header .inner .logo div:nth-child(2) {
+    transform: translateY(5px);
+}
+
+#header .inner .logo .sprite_insta_icon {
+    position: relative;
+    margin-right: 30px;
+}
+
+#header .inner .logo .sprite_insta_icon:after { /*.sprite_insta_icon:after 해당 로고 뒤의 요소*/
+    content: ' ';
+    width: 1px;
+    height: 30px;
+    background: #000;
+    position: absolute;         /*위치 선정 : 부모 기준*/
+    right: -15px;
+    top: -4px;
+}
+
+#header .search_box {
+    position: relative;
+}
+
+#search_field {
+    width: 185px;
+    height: 30px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 3px 30px;
+    color: #999;
+    font-weight: 400;
+    text-align: left;
+    font-size: 14px;
+    outline: none;
+}
+
+#search_field::placeholder {
+    font-size: 0;       /*포커스 X : 글자 보이지 X*/
+}
+
+#search_field:focus::placeholder {
+    font-size: 12px;    /*포커스 시 : 글자 보이도록 */
+}
+
+#header .search_box .fake_field {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#search_field:focus~ .fake_field > span:nth-child(1) {
+    transform: translateX(-105px); /*포커스 시 : 돋보기를 왼쪽으로 이동*/
+}
+
+#search_field:focus~ .fake_field > span:nth-child(2) {
+    display: none; /*포커스 시 글자 숨기기*/
+}
+
+#header .right_icons {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*메인 컨텐츠*/
+#main_container {
+    padding-top: 130px;
+    display: flex;              /*컨텐츠 위치 : 중앙*/
+    justify-content: center;    /*가로 정렬*/
+}
+
+#main_continaer .inner {
+    width: 935px;
+    /* height: 500px;
+    background: red; */
+}
+
+.contents_box {
+
+}
+
+.contents {
+    width: 615px;
+    /* height: 500px; */
+    border: 1px solid rgb(0,0,0,0.1);
+    border-radius: 3px;
+    margin-bottom: 60px;
+    background: #ffffff;
+}
+
+.contents .top {
+    display: flex;      /*가로 배치*/
+    justify-content: space-between; /*가로 정렬*/
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.contents .top .profile_img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.contents .top .profile_img img {
+    width: 100%;
+}
+
+.contents .top .user_continer {
+    display: flex;      /*가로 배치*/
+}
+
+.m_text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.s_text {
+    font-size: 12px;
+}
+
+.contents .img_section {
+    overflow: hidden;   /*부모의 크기를 넘지 않도록 설정*/
+}
+
+.contents .img_section img {
+    width: 100%;        /*부모 크기 100%*/
+}
+
+/*하단 메뉴바*/
+.contents .bottom_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.contents .bottom_icons .left_icons {
+    display: flex;
+}
+
+.contents .bottom_icons .left_icons > div {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/*수정하기*/
+.heart_btn.on .sprite_heart_icon_outline { /*on 클래스 추가 시, 이미지 변경*/
+    background: url('../imgs/background01.png') no-repeat -26px -261px;
+}
+
+/*좋아요 섹션*/
+.contents .likes {
+    padding: 5px 20px;
+    color: #262626;
+}
+
+/*글정보 섹션*/
+.contents .comment_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.contents .comment_container .comment {
+    display: flex;
+    font-size: 14px;
+}
+
+.contents .comment_container .comment .nick_name {
+    margin-right: 10px;
+}
+
+.contents .timer {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+    color: #999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.contents .comment_field {
+    min-height: 56px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.contents .comment_field input {
+    width: 100%;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: transparent;    /*투명한 배경*/
+}
+
+.contents .comment_field input:focus~ .upload_btn {
+    pointer-events: initial;
+    opacity: 1;
+}
+
+.contents .comment_field .upload_btn {
+    color: #3897f0;
+    position: absolute;
+    right: 20px;
+    top : 50%;
+    transform: translateY(-50%);    /*세로 중앙 정렬*/
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.contents .bottom_icons .right_icon > div {
+    cursor: pointer;
+}
